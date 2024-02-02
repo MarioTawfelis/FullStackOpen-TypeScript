@@ -15,7 +15,6 @@ interface Requirements {
 
 const parseArguments = (args: string[]): Requirements => {
   if (args.length < 4) throw new Error('Not enough arguments');
-  let inputSize = args.length
   let target = Number(args[3])
   let exerciseHours = args.slice(4).map(x => Number(x))
   return {
