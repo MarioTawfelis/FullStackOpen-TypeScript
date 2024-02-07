@@ -45,6 +45,10 @@ app.post('/exercises', (req, res) => {
 		return res.status(400).send({ error: 'missing parameters' });
 	}
 
+	if (!Array.isArray(daily_exercises) || (isNaN(target))) {
+		return res.status(400).send({ error: 'malformatted parameters' });
+	}
+
   const result = calculateExercises(daily_exercises as number[], target as number);
   return res.json(result);
 });
