@@ -11,10 +11,10 @@ const parseArguments = (args: string[]): BodyCharacteristics => {
     return {
       height: Number(args[2]),
       weight: Number(args[3])
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
-}
+};
 
-export default parseArguments
+export default parseArguments;
