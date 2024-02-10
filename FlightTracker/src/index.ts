@@ -1,10 +1,16 @@
 import express from 'express';
+import diaryRouter from './routes/diaries';
+
 const app = express();
-const PORT = 3003;
+app.use(express.json());
+
+const PORT = 3000;
 
 app.get('/ping',  (_req, res) => {
   res.send('Pong');
 });
+
+app.use('/api/diaries', diaryRouter);
 
 app.listen(PORT, () => {
   console.log(`Server runnning on port ${PORT}`);

@@ -1,0 +1,7 @@
+{
+	"eslint.workingDirecetories": [
+		"./Patientor/backend",
+		"./Patientor/frontend",
+		"./FlightTracker"
+	]
+}
