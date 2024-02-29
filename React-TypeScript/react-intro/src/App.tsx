@@ -1,48 +1,4 @@
-interface HeaderProps {
-  courseName: string
-}
-
-interface CoursePartBase {
-  name: string,
-  exerciseCount: number
-}
-
-interface CoursePartDescription extends CoursePartBase {
-  description: string
-}
-
-interface CoursePartSpecial extends CoursePartDescription {
-  requirements: Array<string>
-  kind: 'special'
-}
-
-interface CoursePartBasic extends CoursePartDescription{
-  kind: 'basic'
-}
-
-interface CoursePartGroup extends CoursePartBase{
-  groupProjectCount: number,
-  kind: 'group'
-}
-
-interface CoursePartBackground extends CoursePartDescription{
-  backgroundMaterial: string,
-  kind: 'background'
-}
-
-type CoursePart = CoursePartBasic  | CoursePartGroup | CoursePartBackground | CoursePartSpecial;
-
-interface ContentProps {
-  courseParts: CoursePart[];
-}
-
-interface PartProps {
-  part: CoursePart;
-}
-
-interface TotalProps {
-  courseExercises: number
-}
+import { HeaderProps, PartProps, ContentProps, TotalProps, CoursePart } from "./types"; 
 
 /**
  * Helper function for exhaustive type checking
